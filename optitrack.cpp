@@ -8,7 +8,7 @@ namespace optitrack {
 	optitrack_manager::optitrack_manager() {
 		
 		std::stringstream host_stream;
-		std::string server("192.168.18.1");
+		std::string server("192.168.15.1");
 		host_stream << server;
 		host_stream << ":" << 3883; // 端口号
 		std::cout <<"Connecting to VRPN server at " << host_stream.str()<<std::endl;
@@ -117,10 +117,10 @@ namespace optitrack {
 		{
 			sensor_index = static_cast<std::size_t>(tracker_pose.sensor);
 		}
-		std::cout <<"name: " << tracker->tracker_name << "time:" << tracker_pose.msg_time.tv_sec << "+"
+		std::cout <<"name: " << tracker->tracker_name <<" "  << "time:" << tracker_pose.msg_time.tv_sec << "+"
 				 << tracker_pose.msg_time.tv_usec * 1000;
 		std::cout <<"pose:" << tracker_pose.pos[0] <<" " << tracker_pose.pos[1] <<" "<< tracker_pose.pos[2] <<" "
-						<< tracker_pose.quat[0] << tracker_pose.quat[1] << tracker_pose.quat[2] << tracker_pose.quat[3]
+						<< tracker_pose.quat[0] <<" " << tracker_pose.quat[1] <<" " << tracker_pose.quat[2] <<" " << tracker_pose.quat[3]
 						<< std::endl;
 		// std::cout <<"ID: "<<sensor_index <<"time:" <<  tracker_pose.msg_time.tv_sec <<"+"<< tracker_pose.msg_time.tv_usec * 1000 ;
 		// std::cout <<"pose:"<< tracker_pose.pos[0]<<tracker_pose.pos[1]<<tracker_pose.pos[2]
